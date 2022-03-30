@@ -34,4 +34,4 @@ out/
 *.iml
 *.ipr
 *.iws
-requirement
+requirement.txt
