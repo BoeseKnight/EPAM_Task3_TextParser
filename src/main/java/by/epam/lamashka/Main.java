@@ -14,10 +14,12 @@ public class Main {
   public static void main(String[] args) {
     String text;
     Reader textReader = new TextFileReader();
-    text = textReader.read("requirement.txt");
+    text = textReader.read("SourceText.txt");
     logger.info(text);
 
     Parser textParser = new TextParser();
     TextComponent textComposite = textParser.parse(text);
+    logger.info("RECOVERED TEXT:");
+    textComposite.printContent();
   }
 }

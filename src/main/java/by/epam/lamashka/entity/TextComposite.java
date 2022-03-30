@@ -28,6 +28,6 @@ public class TextComposite implements TextComponent {
 
   @Override
   public void printContent() {
-    textComponentList.forEach((component) -> logger.info(component));
+    textComponentList.forEach(TextComponent::printContent);
   }
 }

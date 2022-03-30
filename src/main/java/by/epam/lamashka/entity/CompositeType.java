@@ -1,9 +1,9 @@
 package by.epam.lamashka.entity;
 
 public enum CompositeType {
-  SENTENCE(".|?|!|..."),
+  SENTENCE("\\."),
   WORD(" "),
-  PARAGRAPH("\n"),
+  PARAGRAPH("\r\n\t"),
   TEXT();
 
   String regularExpression;

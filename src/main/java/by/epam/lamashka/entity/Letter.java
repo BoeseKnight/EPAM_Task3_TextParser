@@ -13,6 +13,7 @@ public class Letter implements TextComponent {
 
   @Override
   public void printContent() {
-    logger.info(letter);
+//    logger.info(letter);
+    System.out.print(letter);
   }
 }
