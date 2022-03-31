@@ -15,8 +15,7 @@ public class TextComposite implements TextComponent {
     textComponentList = new ArrayList<>();
   }
 
-  public TextComposite() {
-  }
+  public TextComposite() {}
 
   public TextComposite(CompositeType compositeType) {
     this.compositeType = compositeType;
@@ -29,5 +28,15 @@ public class TextComposite implements TextComponent {
   @Override
   public void printContent() {
     textComponentList.forEach(TextComponent::printContent);
+  }
+
+  @Override
+  public List<TextComponent> getTextComponentList() {
+    return textComponentList;
+  }
+
+  @Override
+  public CompositeType getCompositeType() {
+    return compositeType;
   }
 }
