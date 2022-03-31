@@ -1,7 +1,9 @@
 package by.epam.lamashka;
 
 import by.epam.lamashka.entity.TextComponent;
+import by.epam.lamashka.functional.LongestWordFind;
 import by.epam.lamashka.functional.ParagraphSort;
+import by.epam.lamashka.functional.SentencesDelete;
 import by.epam.lamashka.functional.TextOperation;
 import by.epam.lamashka.parser.Parser;
 import by.epam.lamashka.parser.TextParser;
@@ -25,9 +27,24 @@ public class Main {
     textComposite.printContent();
     System.out.println();
     TextOperation paragraphSort = new ParagraphSort();
+    TextOperation longestWordFind = new LongestWordFind();
+    TextOperation deleteSentences = new SentencesDelete();
+
     paragraphSort.run(textComposite);
     logger.info("PARAGRAPH SORT");
     textComposite.printContent();
+    System.out.println();
 
+    TextComponent maxWord = longestWordFind.run(textComposite);
+    logger.info("LONGEST WORD");
+    maxWord.printContent();
+    System.out.println();
+    textComposite = deleteSentences.run(textComposite);
+    logger.info("DELETED SENTENCES");
+    textComposite.printContent();
+    paragraphSort.run(textComposite);
+    logger.info("PARAGRAPH SORT");
+    textComposite.printContent();
+    System.out.println();
   }
 }

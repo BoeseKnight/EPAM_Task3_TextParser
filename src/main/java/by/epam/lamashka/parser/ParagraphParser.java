@@ -11,7 +11,7 @@ public class ParagraphParser implements Parser {
 
   @Override
   public TextComponent parse(String paragraph) {
-    logger.debug("IN PARAGRAPH PARSER");
+//    logger.debug("IN PARAGRAPH PARSER");
     TextComposite paragraphComposite = new TextComposite(CompositeType.PARAGRAPH);
     TextComponent sentenceComposite;
     Parser sentenceParser=new SentenceParser();

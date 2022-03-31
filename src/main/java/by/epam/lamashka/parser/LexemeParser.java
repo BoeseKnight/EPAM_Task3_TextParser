@@ -10,7 +10,7 @@ public class LexemeParser implements Parser{
     private static final Logger logger = LogManager.getLogger(LexemeParser.class);
     @Override
     public TextComponent parse(String lexeme) {
-        logger.debug("IN LEXEME PARSER");
+//        logger.debug("IN LEXEME PARSER");
         TextComposite lexemeComposite = new TextComposite(CompositeType.PARAGRAPH);
         TextComponent wordComposite;
         Parser sentenceParser=new SentenceParser();

@@ -21,8 +21,16 @@ public class TextComposite implements TextComponent {
     this.compositeType = compositeType;
   }
 
+  public TextComposite(List<TextComponent> textComponentList) {
+    this.textComponentList = textComponentList;
+  }
+
   public void add(TextComponent textComponent) {
     textComponentList.add(textComponent);
+  }
+
+  public void setTextComponentList(List<TextComponent> textComponentList) {
+    this.textComponentList = textComponentList;
   }
 
   @Override

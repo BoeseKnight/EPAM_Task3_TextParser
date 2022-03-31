@@ -12,7 +12,7 @@ public class SentenceParser implements Parser {
 
   @Override
   public TextComponent parse(String sentence) {
-    logger.debug("IN SENTENCE PARSER");
+//    logger.debug("IN SENTENCE PARSER");
     TextComposite sentenceComposite = new TextComposite(CompositeType.SENTENCE);
     TextComponent wordComposite;
     Parser wordParser=new WordParser();
@@ -21,7 +21,7 @@ public class SentenceParser implements Parser {
 //      logger.debug(word);
       wordComposite=wordParser.parse(word);
       sentenceComposite.add(wordComposite);
-      sentenceComposite.add(new Letter(' '));
+//      sentenceComposite.add(new Letter(' '));
     }
     return sentenceComposite;
   }
