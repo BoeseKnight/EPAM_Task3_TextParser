@@ -53,7 +53,7 @@ public class Main {
     equalWordsFind.run(textComposite);
     System.out.println();
 
-    logger.info("VOWELS AND CONSONANTS:");
+    logger.info("NUMBER OF VOWELS AND CONSONANTS IN TEXT");
     vowelsConsonantsCount.run(textComposite);
     System.out.println();
   }
