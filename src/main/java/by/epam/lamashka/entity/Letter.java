@@ -18,11 +18,6 @@ public class Letter implements TextComponent {
   }
 
   @Override
-  public void printContent() {
-    System.out.print(letter);
-  }
-
-  @Override
   public List<TextComponent> getTextComponentList() {
     throw new UnsupportedOperationException("Letter is a leaf, it doesn't have other components.");
   }

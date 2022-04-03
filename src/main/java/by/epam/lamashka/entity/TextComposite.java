@@ -34,11 +34,6 @@ public class TextComposite implements TextComponent {
   }
 
   @Override
-  public void printContent() {
-    textComponentList.forEach(TextComponent::printContent);
-  }
-
-  @Override
   public List<TextComponent> getTextComponentList() {
     return textComponentList;
   }
