@@ -25,7 +25,7 @@ public class Main {
     TextComponent textCompositeWithDeletedSentences;
 
     logger.info("RECOVERED TEXT:");
-    textComposite.printContent();
+    logger.info(textComposite.getContent());
     System.out.println();
 
     TextOperation paragraphSort = new ParagraphSort();
@@ -36,21 +36,22 @@ public class Main {
 
     logger.info("PARAGRAPH SORT");
     paragraphSort.run(textComposite);
-    textComposite.printContent();
+    logger.info(textComposite.getContent());
     System.out.println();
 
     logger.info("LONGEST WORD FIND");
     TextComponent maxWord = longestWordFind.run(textComposite);
-    maxWord.printContent();
+    logger.info(maxWord.getContent());
     System.out.println();
 
     logger.info("TEXT WITH DELETED SENTENCES");
     textCompositeWithDeletedSentences = deleteSentences.run(textComposite);
-    textCompositeWithDeletedSentences.printContent();
+    logger.info(textCompositeWithDeletedSentences.getContent());
     System.out.println();
 
     logger.info("REPEATED WORDS AND THEIR COUNT");
     equalWordsFind.run(textComposite);
+    System.out.println();
 
     logger.info("VOWELS AND CONSONANTS:");
     vowelsConsonantsCount.run(textComposite);
