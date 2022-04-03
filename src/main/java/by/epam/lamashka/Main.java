@@ -49,12 +49,11 @@ public class Main {
     textCompositeWithDeletedSentences.printContent();
     System.out.println();
 
-    logger.info("EQUAL WORDS FIND");
+    logger.info("REPEATED WORDS AND THEIR COUNT");
     equalWordsFind.run(textComposite);
 
     logger.info("VOWELS AND CONSONANTS:");
     vowelsConsonantsCount.run(textComposite);
     System.out.println();
-
   }
 }

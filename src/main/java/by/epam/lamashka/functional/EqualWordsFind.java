@@ -32,7 +32,7 @@ public class EqualWordsFind implements TextOperation {
             i ->
                 stringWords.set(
                     i, stringWords.get(i).replaceAll("\\p{Punct}", "").toLowerCase(Locale.ROOT)));
-//    logger.debug(stringWords);
+    //    logger.debug(stringWords);
     int count;
     for (String word : stringWords) {
       count = Collections.frequency(stringWords, word);
@@ -40,7 +40,6 @@ public class EqualWordsFind implements TextOperation {
         repeatedWords.put(word, count);
       }
     }
-    logger.info("REPEATED WORDS AND THEIR COUNT");
     logger.info(repeatedWords);
     return text;
   }

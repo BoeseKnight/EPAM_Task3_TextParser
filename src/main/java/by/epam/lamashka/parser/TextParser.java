@@ -11,12 +11,13 @@ public class TextParser implements Parser {
 
   @Override
   public TextComponent parse(String text) {
-//    logger.debug("IN TEXT PARSER");
+    //    logger.debug("IN TEXT PARSER");
     TextComposite textComposite = new TextComposite();
     TextComponent paragraphComposite;
     Parser paragraphParser = new ParagraphParser();
     String[] paragraphs = text.split(CompositeType.PARAGRAPH.getRegularExpression());
     for (String paragraph : paragraphs) {
+      //      logger.debug(paragraph);
       paragraphComposite = paragraphParser.parse(paragraph);
       textComposite.add(paragraphComposite);
     }

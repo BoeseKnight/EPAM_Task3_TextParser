@@ -50,9 +50,9 @@ public class TextComposite implements TextComponent {
 
   @Override
   public String getContent() {
-    String content="";
-    for(TextComponent textComponent: textComponentList){
-      content+=textComponent.getContent();
+    String content = "";
+    for (TextComponent textComponent : textComponentList) {
+      content += textComponent.getContent();
     }
     return content;
   }

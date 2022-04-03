@@ -1,6 +1,8 @@
 package by.epam.lamashka.functional;
 
 import by.epam.lamashka.entity.TextComponent;
+import by.epam.lamashka.parser.Parser;
+import by.epam.lamashka.parser.SentenceParser;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,7 +18,7 @@ public class VowelsConsonantsCount implements TextOperation {
             .flatMap(word -> word.getTextComponentList().stream())
             .filter(letter -> letter.getContent().matches("[aeiou]|[уеэоаыи]"))
             .count();
-    logger.info(vowelsLettersCount);
+    logger.info("Number of vowels: " + vowelsLettersCount);
 
     long consonantsLettersCount =
         text.getTextComponentList().stream()
@@ -28,9 +30,14 @@ public class VowelsConsonantsCount implements TextOperation {
                     letter
                         .getContent()
                         .matches(
-                            "[bcdfghjklmnpqrstvwxyz]|[йцкнгшщзхфвпрлджчсмтб]")) // let's consider that 'y' is consonant.
+                            "[bcdfghjklmnpqrstvwxyz]|[йцкнгшщзхфвпрлджчсмтб]")) // let's consider
+            // that 'y' is
+            // consonant.
             .count();
-    logger.info(consonantsLettersCount);
-    return text;
+    logger.info("Number of consonants: " + consonantsLettersCount);
+    Parser numbersParser = new SentenceParser();
+    TextComponent quantities =
+        numbersParser.parse((int) vowelsLettersCount + " " + (int) consonantsLettersCount);
+    return quantities;
   }
 }
