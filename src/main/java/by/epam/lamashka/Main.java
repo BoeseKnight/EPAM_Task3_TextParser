@@ -1,10 +1,7 @@
 package by.epam.lamashka;
 
 import by.epam.lamashka.entity.TextComponent;
-import by.epam.lamashka.functional.LongestWordFind;
-import by.epam.lamashka.functional.ParagraphSort;
-import by.epam.lamashka.functional.SentencesDelete;
-import by.epam.lamashka.functional.TextOperation;
+import by.epam.lamashka.functional.*;
 import by.epam.lamashka.parser.Parser;
 import by.epam.lamashka.parser.TextParser;
 import by.epam.lamashka.reader.Reader;
@@ -20,31 +17,44 @@ public class Main {
     Reader textReader = new TextFileReader();
     text = textReader.read("SourceText.txt");
     logger.info("SOURCE TEXT");
-    System.out.println(text);
+    logger.info(text);
+
     Parser textParser = new TextParser();
+
     TextComponent textComposite = textParser.parse(text);
+    TextComponent textCompositeWithDeletedSentences;
+
     logger.info("RECOVERED TEXT:");
     textComposite.printContent();
     System.out.println();
+
     TextOperation paragraphSort = new ParagraphSort();
     TextOperation longestWordFind = new LongestWordFind();
     TextOperation deleteSentences = new SentencesDelete();
+    TextOperation equalWordsFind = new EqualWordsFind();
+    TextOperation vowelsConsonantsCount = new VowelsConsonantsCount();
 
-    paragraphSort.run(textComposite);
     logger.info("PARAGRAPH SORT");
+    paragraphSort.run(textComposite);
     textComposite.printContent();
     System.out.println();
 
+    logger.info("LONGEST WORD FIND");
     TextComponent maxWord = longestWordFind.run(textComposite);
-    logger.info("LONGEST WORD");
     maxWord.printContent();
     System.out.println();
-    textComposite = deleteSentences.run(textComposite);
-    logger.info("DELETED SENTENCES");
-    textComposite.printContent();
-    paragraphSort.run(textComposite);
-    logger.info("PARAGRAPH SORT");
-    textComposite.printContent();
+
+    logger.info("TEXT WITH DELETED SENTENCES");
+    textCompositeWithDeletedSentences = deleteSentences.run(textComposite);
+    textCompositeWithDeletedSentences.printContent();
     System.out.println();
+
+    logger.info("EQUAL WORDS FIND");
+    equalWordsFind.run(textComposite);
+
+    logger.info("VOWELS AND CONSONANTS:");
+    vowelsConsonantsCount.run(textComposite);
+    System.out.println();
+
   }
 }

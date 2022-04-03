@@ -12,12 +12,12 @@ public class WordParser implements Parser {
 
   @Override
   public TextComponent parse(String word) {
-//    logger.debug("IN WORD PARSER");
+    //    logger.debug("IN WORD PARSER");
     TextComposite wordComposite = new TextComposite(CompositeType.WORD);
     TextComponent letter;
-    for (int i=0; i<word.length();i++) {
-//      logger.debug(word.charAt(i));
-      letter=new Letter(word.charAt(i));
+    for (int i = 0; i < word.length(); i++) {
+      //      logger.debug(word.charAt(i));
+      letter = new Letter(word.charAt(i));
       wordComposite.add(letter);
     }
     return wordComposite;

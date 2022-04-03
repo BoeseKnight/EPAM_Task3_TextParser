@@ -11,14 +11,14 @@ public class ParagraphParser implements Parser {
 
   @Override
   public TextComponent parse(String paragraph) {
-//    logger.debug("IN PARAGRAPH PARSER");
+    //    logger.debug("IN PARAGRAPH PARSER");
     TextComposite paragraphComposite = new TextComposite(CompositeType.PARAGRAPH);
     TextComponent sentenceComposite;
-    Parser sentenceParser=new SentenceParser();
+    Parser sentenceParser = new SentenceParser();
     String[] sentences = paragraph.split(CompositeType.SENTENCE.getRegularExpression());
     for (String sentence : sentences) {
-//      logger.debug(sentence);
-      sentenceComposite=sentenceParser.parse(sentence);
+      //      logger.debug(sentence);
+      sentenceComposite = sentenceParser.parse(sentence);
       paragraphComposite.add(sentenceComposite);
     }
     return paragraphComposite;

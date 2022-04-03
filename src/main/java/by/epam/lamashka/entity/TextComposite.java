@@ -47,4 +47,13 @@ public class TextComposite implements TextComponent {
   public CompositeType getCompositeType() {
     return compositeType;
   }
+
+  @Override
+  public String getContent() {
+    String content="";
+    for(TextComponent textComponent: textComponentList){
+      content+=textComponent.getContent();
+    }
+    return content;
+  }
 }

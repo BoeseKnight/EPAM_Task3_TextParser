@@ -24,9 +24,6 @@ public class ParagraphSort implements TextOperation {
                         .count()
                     : 0);
     Collections.sort(text.getTextComponentList(), comparator);
-    for (TextComponent paragraph : text.getTextComponentList()) {
-      logger.info(paragraph.getCompositeType());
-    }
     return text;
   }
 }

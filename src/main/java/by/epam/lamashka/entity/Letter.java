@@ -13,9 +13,12 @@ public class Letter implements TextComponent {
     this.letter = letter;
   }
 
+  public String getContent() {
+    return String.valueOf(letter);
+  }
+
   @Override
   public void printContent() {
-//    logger.info(letter);
     System.out.print(letter);
   }
 
